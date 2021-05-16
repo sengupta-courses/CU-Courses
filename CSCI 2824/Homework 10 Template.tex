@@ -1,0 +1,143 @@
+
+\documentclass[11pt]{amsart}
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm,nohead,foot=2cm]{geometry}
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{moreverb}
+\usepackage{multicol, multirow}
+\usepackage{comment}
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{tikzsymbols}
+
+
+%creating solution environment
+\specialcomment{sol}{\textbf{Solution: }}{}
+%this command toggles the solutions
+\excludecomment{sol} %comment this to SHOW solutions
+
+%For the lazy:
+\newcommand{\ds}{\displaystyle}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\bee}{\begin{eqnarray*}}
+\newcommand{\eee}{\end{eqnarray*}}
+\newcommand{\dds}[2]{\frac{\mathrm{d}#2}{\mathrm{d}#1}} %(d1 BY d2)
+\newcommand{\ddb}[2]{\frac{\mathrm{d}}{\mathrm{d}#1}\left[ #2\right]}
+%(d by d1 OF 2)
+
+\begin{document}
+
+\begin{minipage}{0.5\textwidth}
+		\noindent {\bf CSCI 2824 -- Spring 2020}
+\end{minipage}\hfill
+\begin{minipage}{0.5\textwidth}
+		\noindent \hfill {\bf Homework 10}
+\end{minipage}
+\noindent This assignment is due on Wednesday, Apr 22 to Gradescope by 11:59pm.  You are expected to write up your solutions neatly and \textbf{use the coverpage}.  Remember that you are encouraged to discuss problems with your classmates, but you must work and write your solutions on your own. 
+
+{\bf Important}: On the {\bf official CSCI 2824 cover page} of your assignment clearly write your full name, the lecture section you belong to (001 or 002), and your student ID number.  You may \textbf{neatly} type your solutions for +2 extra credit on the assignment. You will lose \textit{all} 5 style/neatness points if you fail to use the official cover page.
+
+\vspace{5mm}
+\be
+%==============================================================================
+% Counting
+%==============================================================================
+\item A common ``brainteaser" puzzle asks the following:  suppose we draw an isosceles triangle, and then draw $k$ lines from the central vertex to various unique points on the opposite edge.  Suppose we also draw $n$ unique lines through the triangle, each parallel to the opposing edge.  We are going to count how many distinct triangles have been created.\\ 
+
+For example, the $n=0$ and $k=1$ triangle is shown on the left.  It contains 3 distinct triangles: the outer lines form a triangle, and the left and right sides also form triangles.   The $n=2$, $k=3$ triangle is shown at right.\\
+
+\includegraphics[width=.12\textwidth]{1x0TriAll} \includegraphics[width=.12\textwidth]{3x2Triangle}\\
+
+What is the total of number of triangles as a function of $n$ and $k$?  Use a sentence to explain why your result is the case.\\
+
+	\begin{sol}
+		%%YOUR SOLUTION TO #1, HERE! 
+	\end{sol}
+%==============================================================================
+% Probabilty Indepdendence
+%==============================================================================
+\item Ask yourself: when you draw cards from a deck, does the order matter?  Answer the following:
+	\be
+	\item You have a standard 52 card deck.  If you draw two cards at random, what is the probability that they are both hearts? 
+	
+	\item You reshuffle your cards into the deck, but unfortunately now a mischievous dog (a portly Beagle named Lola), decides to eat one of the cards!  Assuming that the missing card is a diamond, now when you draw two cards at random what is the probability that they are both hearts? 
+	
+	\item Suppose you have your now-51 card deck, and you randomly draw two cards from it.  Both are hearts.  Given this, what is the probability that the missing card is a diamond?
+	
+	\item Are the events (two cards drawn at random are both spades) and (the missing card is a diamond) independent?  Justify your answer.
+	\ee
+\begin{sol}
+	%%YOUR SOLUTION TO #2, HERE!
+\end{sol}
+
+%==============================================================================
+% Probabilty Distributions
+%==============================================================================
+\item In Monopoly, your token is allowed to leave the ``jail" cell if you roll doubles: you roll two 6-sided dice and each shows the same face.  Zach hates being in jail, because it reminds him of watching ``The Wire" on TV.  So he invents a couple of weighted dice that are \textit{not independent}.  In particular, if you roll either die on its own it's a fair die: each outcome has probability $1/6$.  But if you roll one die and then the other, the red die will take the same outcome as the blue die exactly half the time: all other outcomes are equally likely.
+
+\be
+\item Suppose you roll a 3 on the blue die.  What is the probability distribution of the red die \textit{given} this outcome on the blue die?
+\item Find the full probability distribution for the value of the \textit{sum} of the two faces of the dice.
+\item What is the probability you roll doubles?
+\item What is the probability that you roll a 7 as the sum of the two dice?
+\ee 
+	\begin{sol}
+	%%YOUR SOLUTION TO #3, HERE!
+	\end{sol}
+
+%==============================================================================
+% Conditionals and Bayes'
+%==============================================================================
+\item You've learned something in CSCI2824, and it's this: ``Always bring Mudkip."  So you collected some Mudkips for your Pok\'emon collection.  Your Mudkips can be either blue (B) or purple (P) (exclusive) in coloration, and can use either water (W) attacks or ground (G) attacks (exclusive).  80\% of your Mudkips are blue: the rest are purple.  Of your blue Mudkips, 80\% use water attacks.  Of your purple Mudkips, 55\% use water attacks.
+\be
+\item Suppose you pick a Mudkip at random from your Pok\'ebox.  What is $P(G),$ the probability that your random selection uses ground attacks?
+\item Suppose you pick a Mudkip at random and it happens to use a ground attack.  Given this information, what's the probability that the Mudkip is purple?
+\ee
+	\begin{sol}
+	%%YOUR SOLUTION TO #4, HERE!
+	\end{sol}
+
+%==============================================================================
+% Counting with a Recurrence: 
+%==============================================================================
+\item It's day 2576 of post-apocalyptic quarantine, and you're bored.  Really bored.  For entertainment, you've taken to exchanging text messages with your best friend - or at least they were your best friend 2577 days ago - that are just contiguous strings of the four emojis: {\LARGE \Winkey \Innocey \Cat \Coffeecup}.  For example, one such text message might read ``\Cat \Coffeecup \Winkey \Coffeecup \Innocey \Cat".
+\be
+\item Find a recurrence relation for the number of possible length-$n$ emoji strings that do not contain two consecutive cat emojis, {\LARGE\Cat\Cat}.
+\item What are the initial conditions for the recurrence relation?
+\item Find a closed-form solution to the recurrence relation you found in part (a) by solving for the roots of the characteristic polynomial and then using initial conditions to determine the constants.
+\item Use your closed form expression to determine the number of length-7 emoji strings that do not contain 2 consecutive cat emojis.
+\ee
+
+	\begin{sol}
+	%%YOUR SOLUTION TO #5, HERE!
+	\end{sol}
+
+
+%==============================================================================
+% A full recurrence problem
+%==============================================================================
+\item Consider the recurrence relation $a_n = 2a_{n-1} + 3 a_{n-2} + n^2$ with initial conditions $a_0= 0$ and $a_1 = 7$.
+
+Find a closed form solution for the given recurrence relation. In your solution, put a box around each of the following, and clearly label them:
+\be
+	\item the characteristic polynomial
+	\item the solution to the associated homogeneous recurrence relation ($a_n^{(h)}$)
+	\item the full particular solution \textbf{guess} that you are plugging into the full nonhomogeneous recurrence relation ($a_n^{(p)}$)
+	\item the full general solution (with unknown coefficients still) ($a_n$)
+	\item the full solution to the initial value problem (having now solved for any unknown coefficients)
+\ee
+	\begin{sol}
+	%%YOUR SOLUTION TO #6, HERE!
+	\end{sol}
+
+\ee
+
+\end{document}

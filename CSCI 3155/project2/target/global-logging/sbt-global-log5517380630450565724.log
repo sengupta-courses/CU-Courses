@@ -1,0 +1,14 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(checkAndZipSubmission, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: checkAndZipSubmission[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 8 Scala sources to /Users/pournasengupta/Dropbox/csci3155/project2/target/scala-2.12/classes ...[0m
+[0m[[0m[31merror[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/MyCanvas.scala:97:39: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : Double[0m
+[0m[[0m[31merror[0m] [0m[0m required: (Double, Double)[0m
+[0m[[0m[31merror[0m] [0m[0m        new MyCircle(newC.c._1 * cosT - newC.c._2 * sinT, newC.c._1 * sinT + newC.c._2 * cosT)[0m
+[0m[[0m[31merror[0m] [0m[0m                                      ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
+[0m[[0m[0mdebug[0m] [0m[0mForcing garbage collection...[0m
+[0m[[0m[31merror[0m] [0m[0m(Compile / [31mcompileIncremental[0m) Compilation failed[0m
+[0m[[0m[31merror[0m] [0m[0mTotal time: 11 s, completed Apr 9, 2021 1:08:29 PM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m

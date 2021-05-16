@@ -1,0 +1,18 @@
+QUESTION 1: 
+    Consider an array int a[] = {1,2,3}. 
+    What is the output for the following?
+    a. cout << a+2; 
+        ANSWER: 0x7ffeefbb8ae4 (address of a+2)
+    b. cout << *(a+2); 
+        ANSWER: 3
+    c. cout << *a; 
+        ANSWER: 1
+    d. cout << *a[0]; 
+        ANSWER: invalid syntax
+
+QUESTION 2: 
+    How come we can pass an array name as an 
+    argument to a function and still be able 
+    to persist the change? 
+    ANSWER: The array name points to the memory location, 
+            which is not effected. 

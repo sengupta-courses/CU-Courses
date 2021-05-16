@@ -1,0 +1,36 @@
+Contact Information: 
+Pourna Sengupta 
+109086577 
+pose9026@colorado.edu 
+
+Files: 
+helloworld.c
+Makefile
+syscalls_64.tbl
+syscalls.h
+Simple_add.c
+cs3753.c
+userspace.c
+
+Location of Files: 
+/home/kernel/linux-hwe-4.15.0/arch/x86/kernel/helloworld.c
+-Contains hello world function. Outputs hello world
+
+/home/kernel/linux-hwe-4.15.0/arch/x86/kernel/Makefile
+-Contains Makefile contents and added obj-y += helloworld.o and obj-y += Simple_add.o
+
+/home/kernel/linux-hwe-4.15.0/arch/x86/entry/syscalls_64.tbl
+-Contains all system calls and calling numbers. 
+
+/home/kernel/linux-hwe-4.15.0/include/linux/syscalls.h
+-Contains declarations and prototypes for system calls. Added Simple_add and helloworld
+
+/home/kernel/linux-hwe-4.15.0/arch/x86/kernel/Simple_add.c
+-Contains addition function. Prints the entered the two numbers and sums them. Returns 0. 
+
+/home/kernel/linux-hwe-4.15.0/arch/x86/kernel/cs3753.c
+-gcc Simple_add.c ./a./out
+
+/home/kernel/linux-hwe-4.15.0/arch/x86/kernel/userspace.c
+-helloworld test. gcc userspace.c ./a.out
+

@@ -1,0 +1,9 @@
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(checkAndZipSubmission, None, None)[0m
+[0m[[0m[0mdebug[0m] [0m[0mEvaluating tasks: checkAndZipSubmission[0m
+[0m[[0m[0mdebug[0m] [0m[0mRunning task... Cancel: Signal, check cycles: false, forcegc: true[0m
+[0m[[0m[0minfo[0m] [0m[0mcompiling 5 Scala sources to /Users/pournasengupta/Dropbox/csci3155/project1/target/scala-2.12/classes ...[0m
+[0m[[0m[0minfo[0m] [0m[0mNon-compiled module 'compiler-bridge_2.12' for Scala 2.12.10. Compiling...[0m
+[0m[[0m[0minfo[0m] [0m[0m  Compilation completed in 12.768s.[0m
+[0m[[0m[0minfo[0m] [0m[0mdone compiling[0m
+[0m[[0m[32msuccess[0m] [0m[0mTotal time: 17 s, completed Mar 7, 2021 12:48:44 AM[0m
+[0m[[0m[0mdebug[0m] [0m[0m> Exec(idea-shell, None, None)[0m

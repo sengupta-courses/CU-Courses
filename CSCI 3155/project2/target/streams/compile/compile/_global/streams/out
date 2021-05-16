@@ -1,0 +1,27 @@
+[0m[[0m[0mdebug[0m] [0m[0mAcquiring lock on file /Users/pournasengupta/Dropbox/csci3155/project2/project/target/.sbt-compilation-infos/project2-compile/.sbt-idea-lock ...[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/Interpreter.scala:64:54: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ConstBool(_)[0m
+[0m[[0m[33mwarn[0m] [0m[0m    def evalExpr(e: Expr, env: Environment): Value = e match {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                     ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/LettuceParser.scala:46:60: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ~(_, Some(_))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        val opt5 = exprLev2~ opt(("&&"|"||") ~ exprLev1)^^ {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                           ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/LettuceParser.scala:64:50: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ~(_, Some(_))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        exprLev3 ~ opt(compOperator~ exprLev2) ^^{[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/LettuceParser.scala:76:52: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ~(_, Some(_))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        exprLev4 ~ opt( ("+"| "-") ~ exprLev3 ) ^^ {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                   ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/LettuceParser.scala:85:49: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ~(_, Some(_))[0m
+[0m[[0m[33mwarn[0m] [0m[0m        exprLev5 ~ opt(("*"|"/") ~ exprLev4) ^^ {[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m/Users/pournasengupta/Dropbox/csci3155/project2/src/main/scala/edu/colorado/csci3155s2021/project2/LettuceParser.scala:98:98: match may not be exhaustive.[0m
+[0m[[0m[33mwarn[0m] [0m[0mIt would fail on the following input: ~((x: String forSome x not in ("!", "circle", "line", "rectangle", "triangle")), _)[0m
+[0m[[0m[33mwarn[0m] [0m[0m          ( ( "rectangle" | "triangle" | "circle" | "line" | "!"  ) ~ ("(" ~> exprLev1 <~ ")") ^^{[0m
+[0m[[0m[33mwarn[0m] [0m[0m                                                                                                 ^[0m
+[0m[[0m[33mwarn[0m] [0m[0m6 warnings found[0m
+[0m[[0m[0mdebug[0m] [0m[0mReleasing lock on file /Users/pournasengupta/Dropbox/csci3155/project2/project/target/.sbt-compilation-infos/project2-compile/.sbt-idea-lock.[0m

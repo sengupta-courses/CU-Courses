@@ -1,0 +1,204 @@
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{amssymb}
+\usepackage{amsmath}
+
+\usepackage{enumerate}
+\usepackage{booktabs}
+
+
+\title{CSCI 4314/5314 Dynamic Models in Biology\\Homework Set 2}
+\date{} % Activate to display a given date or no date
+
+\begin{document}
+\maketitle 
+
+\section*{Simulation of Random Walks (50 points)}
+
+This homework will illustrate a simple example of animal movement predictions through a random walk simulation. In the simulation, you will implement and asses the performance of several of movement schemes in two dimensions: 
+
+\begin{itemize}
+\item Biased Random Walks (BRW)
+\item Correlated Random Walks (CRW)
+\item Biased Correlated Random Walks (BCRW)
+\end{itemize}
+
+At each random walk step the components of movement in each direction are given by a weighted vector sum of a correlated term and a biased term:  
+
+\begin{equation}
+\Delta X _{i+1} = v\left[ w \cos \left(\theta_0 + \theta^{BRW}_i\right)  +   (1-w) \cos \left(\theta_i + \theta^{CRW}_i \right)\right]
+\end{equation}
+
+\begin{equation}
+\Delta Y _{i+1} = v \left[ w \sin \left(\theta_0 + \theta^{BRW}_i\right)  +   (1-w) \sin \left(\theta_i + \theta^{CRW}_i \right)\right]
+\end{equation}
+
+where $v$ is the step size, $\theta_0$ is the directional bias, $\theta^{CRW}_i$ is an random angel from a uniform probability distribution function with mean 0 and variance $\theta^{*CRW}$.  Similarly, $\theta^{BRW}_i$ is an random angel from a uniform probability distribution function with mean 0 and variance $\theta^{*BRW}$. $w \in [0,1]$ is the weighting given to the directional bias (and hence $(1-w)$ is the weighting given to correlated motion). 
+
+We define the navigational efficiency of a single step of the movement process as:
+
+\begin{equation}
+\text{Navigational efficiency} = \frac{\text{Net distance moved towards target in the } \theta_0 \text{ direction}}{\text{Total distance moved}}
+\end{equation}
+
+
+\clearpage
+
+Template code can be found on Canvas under Files/Codes. Feel free to modify the code in any way you prefer: \begin{itemize}
+\item Matlab version, file name random\_walks.m
+\item Python version, file name random\_walks.py
+
+
+
+\end{itemize}
+
+\begin{enumerate}[(1)]  
+
+\item Assume that the variances of the turning angle distributions for the biased and correlated random walk are equal $\theta^{*BRW} = \theta^{*CRW} = \theta^{*}$. Explore several values of turning angle distributions variances $\theta^* = \pi/24,\pi/12,\pi/3$. For each of the following conditions, calculate the mean navigational efficiency (Eq.~3), as a function of simulation time steps, of $50$ repetitions of random walks, each of $500$ time steps:
+
+\begin{enumerate}[(a)]  
+
+\item The case of a pure Biased Random Walks (BRW), i.e., $w=1$. (10 points) 
+
+\item The case of a pure Correlated Random Walks (CRW), i.e., $w=0$. (10 points) 
+
+\item The case of equally balanced BRW and CRW, i.e., $w=0.5$. (10 points) 
+
+\end{enumerate}
+
+\item If $\theta^{*CRW} =\pi/30$, and $\theta^{*BRW} =\pi/3$, what is the value of $w$ associated with the highest navigational efficiency? (20 points)
+
+\end{enumerate}
+
+\section*{Paper Review (50 points)}
+
+The paper ``Evaluating random search strategies in three mammals from distinct feeding guilds'' by Auger--Methe \textit{et. al} (Journal of Animal Ecology, 2016), utilizes several random walk models we learned in class, to classify animal search strategies. You can find the paper on Canvas under Files/Paper Reviews/J Anim Ecol 2016 Auger-Methe.pdf. 
+
+For this part of the homework set, download the paper from Canvas, read it carefully and write a couple of sentences on each of the following items: 
+
+\begin{itemize}
+\item What do you feel the main contribution of this paper is? (10 points)
+\item What's the essential principle that the paper exploits? (10 points)
+\item Describe one major strength of the paper. (10 points)
+\item Describe weakness of the paper. (10 points)
+\item Describe one future work direction you think should be followed. (10 points)
+\end{itemize}
+
+
+The point of the reviews is demonstrate your understanding of the paper. It is not to regurgitate the paper but to identify what  \textit{you think} is the key concept to learn from the paper and what your opinion is of the strength/weakness of the idea and or paper. We are looking for thoughtful and insightful reviews, that demonstrate depth in your reading and thinking about the paper.
+
+
+%\clearpage
+%
+%\textbf{\Large Problem Set Solutions}
+%\\
+%\\
+%
+%\begin{enumerate}[(1)] 
+%
+%\item Histogram of pixel values of f(x, y):
+%
+%\begin{figure}[h!]
+%  \includegraphics[width=0.45\linewidth]{histogram.jpg}
+%  %\caption{A boat.}
+%  %\label{fig:boat1}
+%\end{figure}
+%
+%
+%\item With threshold value $c=1$:
+%
+%\begin{equation*}
+%f(x, y) = \begin{bmatrix} 
+%1 & 1 & 1 & 1 \\
+%1 & 1 & 1 & 1 \\
+%1 & 1 & 1 & 1 \\
+%1 & 1 & 1 & 1 
+%\end{bmatrix}
+%\end{equation*}
+%
+%\item With threshold value $c=2$:
+%
+%\begin{equation*}
+%f(x, y) = \begin{bmatrix} 
+%0 & 1 & 0 & 1 \\
+%1 & 1 & 0 & 1 \\
+%0 & 1 & 1 & 1 \\
+%1 & 0 & 1 & 0 
+%\end{bmatrix}
+%\end{equation*}
+%
+%
+%With threshold value $c=5$:
+%
+%\begin{equation*}
+%f(x, y) = \begin{bmatrix} 
+%0 & 0 & 0 & 0 \\
+%0 & 1 & 0 & 0 \\
+%0 & 0 & 0 & 0 \\
+%0 & 0 & 0 & 0 
+%\end{bmatrix}
+%\end{equation*}
+%
+%
+%\item 
+%
+%\begin{equation*}
+%f(x, y) = \begin{bmatrix} 
+%3 & 2.75  & 1.75 & 1.25\\
+%2.4 & 3 & 2.25 & 1.25 \\
+%1.75 & 2.5 & 2.5 & 0.75 \\
+%1 & 1.25 & 1.25 & 0.25 
+%\end{bmatrix}
+%\end{equation*}
+%
+%
+%\item 
+%
+%\begin{equation*}
+%k(x, y) = \frac{1}{9} \begin{bmatrix} 
+%1 & 1 & 1\\
+%1 & 1 & 1\\
+%1 & 1 & 1\
+%\end{bmatrix}
+%\end{equation*}
+%
+%\item 
+%
+%\begin{equation*}
+%f(x, y) = \begin{bmatrix} 
+%1 & 9 & 1 & 4 \\
+%4 & 36 & 1 & 9 \\
+%1 & 4 & 9 & 4 \\
+%9 & 1 & 16 & 1 
+%\end{bmatrix}
+%\end{equation*}
+%
+%%\item Rescale the range of pixel values of g(x, y) so that they can be represented by the range \{0,1, 2,...,7\}. 
+%
+%
+%\end{enumerate}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

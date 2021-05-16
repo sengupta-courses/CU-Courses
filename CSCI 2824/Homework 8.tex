@@ -1,0 +1,150 @@
+
+\documentclass[11pt]{amsart}
+\usepackage[left=2cm,top=2cm,right=2cm,bottom=2cm,nohead,foot=2cm]{geometry}
+\geometry{letterpaper}
+\usepackage[parfill]{parskip}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{float}
+\usepackage{epstopdf}
+\usepackage{moreverb}
+\usepackage{multicol}
+\usepackage{comment}
+\usepackage{wrapfig}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+
+%creating solution environment
+\specialcomment{sol}{\textbf{Solution: }}{}
+%this command toggles the solutions
+\excludecomment{sol} %comment this to SHOW solutions
+
+%For the lazy:
+\newcommand{\ds}{\displaystyle}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+\newcommand{\mrm}{\mathrm}
+\newcommand{\bee}{\begin{eqnarray*}}
+\newcommand{\eee}{\end{eqnarray*}}
+\newcommand{\dds}[2]{\frac{\mathrm{d}#2}{\mathrm{d}#1}} %(d1 BY d2)
+\newcommand{\ddb}[2]{\frac{\mathrm{d}}{\mathrm{d}#1}\left[ #2\right]}
+%(d by d1 OF 2)
+
+\begin{document}
+
+\begin{minipage}{0.5\textwidth}
+		\noindent {\bf CSCI 2824 -- Spring 2020}
+\end{minipage}\hfill
+\begin{minipage}{0.5\textwidth}
+		\noindent \hfill {\bf Homework 8}
+\end{minipage}
+\noindent This assignment is due on Friday, Mar 13 to Gradescope by 11:59pm.  You are expected to write up your solutions neatly and \textbf{use the coverpage}.  Remember that you are encouraged to discuss problems with your classmates, but you must work and write your solutions on your own. 
+
+{\bf Important}: On the {\bf official CSCI 2824 cover page} of your assignment clearly write your full name, the lecture section you belong to (001 or 002), and your student ID number.  You may \textbf{neatly} type your solutions for +2 extra credit on the assignment. You will lose \textit{all} 5 style/neatness points if you fail to use the official cover page.
+
+\vspace{5mm}
+\be
+%==============================================================================
+% Reviews from E1
+%==============================================================================
+\item The following are riffs on exam one questions that many students struggled with.
+	\be
+		\item Name two domains - with the same domain for both $x$ and $y$ - such that \textit{both} the statements $\forall x \exists y \left(x^2 \geq y \right) $ and $\exists x \forall y \left(x^2 > y \right) $ are \textbf{true}?  Next, name two domains - with the same domain for both $x$ and $y$ - such that \textit{both} the statements $\forall x \exists y \left(x^2 \geq y \right) $ and $\exists x \forall y \left(x^2 > y \right) $ are \textbf{false}?
+		\item Suppose sets $A$ and $B$ satisfy $A \cup B = A$.  What can you conclude about sets $A$ and $B$?  Explain.
+		\item Suppose sets $A$ and $B$ satisfy $A-B=A$.  What can you conclude about sets $A$ and $B$?  Explain.
+	\ee
+
+	\begin{sol}
+		%%YOUR SOLUTION TO #1, HERE!
+	\end{sol}
+
+%==============================================================================
+% Chapter 4
+%==============================================================================
+\item Use divisibility and modular arithmetic to answer the following, showing all work: 
+	\be
+	\item Find the greatest common divisor of $a=8640$ and $b=102816$.
+	\item Determine whether $c=733$ is prime or not by checking its divisibility by prime numbers up to $\sqrt{c}$.
+	\ee
+	\begin{sol}
+	%%YOUR SOLUTION TO #2, HERE!
+	\end{sol}
+
+%==============================================================================
+% Formal Big-O and Big-Omega; polynomial bounding
+%==============================================================================
+\item Consider the function $f(n) = 7n^{4} + 22n^{4}\log{(n)} - 5n^{2}\log{(n^{2})}$ which represents the complexity of some algorithm. 
+
+\be
+	\item Find a tight big-\textbf{O} bound of the form $g(n) = n^{p}$ for the given function $f$ with some natural number $p$. What are the constants $C$ and $k$ from the big-\textbf{O} definition?
+	\item Find a tight big-\textbf{$\boldsymbol{\Omega}$} bound of the form $g(n) = n^{p}$ for the given function $f$ with some natural number $p$. What are the constants $C$ and $k$ from the big-\textbf{$\boldsymbol{\Omega}$} definition?
+	\item Can we conclude that $f$ is big-\textbf{$\boldsymbol{\Theta} (n^{p})$} for some natural number $p$?	
+\ee
+	\begin{sol}
+	%%YOUR SOLUTION TO #3, HERE!
+\end{sol}
+
+%==============================================================================
+% Limits for Big-O and Big-Omega
+%==============================================================================
+\item Consider the function $\ds g(n) = 2^n + \frac{n(n+1)}{2} -\log{\left( n^{n^n}\right) }$ which represents the complexity of some algorithm. 
+
+\be
+\item Between $2^n$ and $\frac{n(n+1)}{2}$, which function grows \textit{asymptotically faster} as $n \to \infty$?  Justify by computing an appropriate limit.
+\item Between $2^n$ and $\log{\left( n^{n^n}\right) }$, which function grows \textit{asymptotically faster} as $n \to \infty$?  Justify by computing an appropriate limit.
+\item Between $\frac{n(n+1)}{2}$ and $\log{\left( n^{n^n}\right) }$, which function grows \textit{asymptotically faster} as $n \to \infty$?  Justify by computing an appropriate limit.
+\item What is the order of $g$?	
+\ee
+	\begin{sol}
+	%%YOUR SOLUTION TO #4, HERE!
+\end{sol}
+
+\clearpage
+%==============================================================================
+% Matrix Multipliction
+%==============================================================================
+
+\item  Consider the following matrices. \\\\
+$A=\begin{bmatrix} 1&4\\ 1&1\\ 1&4\\ 1&1 \end{bmatrix}$
+$B=\begin{bmatrix} 2&2&2&1\\ 1&1&1&2\end{bmatrix}$ and 
+$C=\begin{bmatrix} 1&1\\ 2&2\\ 1&1\\ 2&0\end{bmatrix}$\\\\\\
+For this problem, we will calculate product $P=ABC$. Note that matrix multiplication is associative, which means we can calculate the product $P$ by first computing the matrix $(AB)$, then multiplying this by $C$ to obtain $P=(AB)C$. \textbf{Or} we could first compute the matrix $(BC)$, then multiply it by A to obtain $P=A(BC)$. Now recall that to multiply an $m\times n$ matrix by an $n\times k$ matrix requires $m\times n\times k$ \textit{multiplications}.\\
+	\be
+		\item Suppose $A$ is $m\times n$, $B$ is $n\times k$ and $C$ is $k\times p$. How many multiplications are needed to calculate $P$ in the order $(AB)C$? Do not just write down an expression; show your work/justification!
+		\item For the same matrix dimensions specified in (a), how many multiplications are needed to calculate P in the order $A(BC)$? Again, do not just write down an expression.
+		\item Based on the specific dimensions of $A$, $B$, and $C$ in the problem description, which multiplication order would be the most efficient?
+		\item Calculate $P=ABC$ using whichever order you specified in part (c).
+	\ee
+
+	\begin{sol}
+	%%YOUR SOLUTION TO #5, HERE!
+\end{sol}
+
+
+%==============================================================================
+% Induction 1
+%==============================================================================
+\item Use induction to show that $\sum_{i=0}^n i^3= \frac{n^2(n+1)^2}{4}$.
+Be sure to state whether you're using weak or strong induction.
+	\begin{sol}
+	%%YOUR SOLUTION TO #6, HERE!
+\end{sol}
+
+%==============================================================================
+% Induction 2
+%==============================================================================
+\item Let $A_1, A_2, \dots A_n$ be sets.  Use induction to show that for $n \geq 2$, the cardinality of the union of $n$ sets is always less than or equal to the sum of the cardinalities of those sets.  In other words, show:
+$$\left| \bigcup_{i=1}^n A_i \right| \leq \sum_{i=1}^n \left|A_i \right| $$
+Be sure to state whether you're using weak or strong induction.\\  Hint: use the same rule that HW 4 \#6 was based around.
+
+
+	\begin{sol}
+	%%YOUR SOLUTION TO #7, HERE!
+\end{sol}
+
+\ee
+
+
+
+\end{document}

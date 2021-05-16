@@ -1,0 +1,89 @@
+[debug] > Exec(early(addDefaultCommands), None, None)
+[debug] > Exec(addDefaultCommands, None, None)
+[debug] > Exec(early(initialize), None, None)
+[debug] > Exec(initialize, None, None)
+[debug] > Exec(boot, None, None)
+[debug] > Exec(writeSbtVersion, None, None)
+[debug] > Exec(reload, None, None)
+[debug] > Exec(sbtStashOnFailure, None, None)
+[debug] > Exec(onFailure loadFailed, None, None)
+[debug] > Exec(loadp, None, None)
+[info] welcome to sbt 1.4.6 (Amazon.com Inc. Java 1.8.0_282)
+[debug]       Load.loadUnit: plugins took 137.819925ms
+[debug]       Load.loadUnit: defsScala took 0.483372ms
+[debug] [Loading] Scanning directory /Users/pournasengupta/.sbt/1.0/plugins
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/pournasengupta/.sbt/1.0/plugins, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 180.482769 ms
+[debug]           Load.resolveProject(global-plugins) took 85.647618ms
+[debug]         Load.loadTransitive: finalizeProject(Project(id global-plugins, base: /Users/pournasengupta/.sbt/1.0/plugins, plugins: List(<none>))) took 326.298788ms
+[debug] [Loading] Done in /Users/pournasengupta/.sbt/1.0/plugins, returning: (global-plugins)
+[debug]       Load.loadUnit: loadedProjectsRaw took 367.42763ms
+[debug]       Load.loadUnit: cleanEvalClasses took 0.453313ms
+[debug]     Load.loadUnit(file:/Users/pournasengupta/.sbt/1.0/plugins/, ...) took 518.902538ms
+[debug]   Load.apply: load took 875.349084ms
+[debug]   Load.apply: resolveProjects took 7.561634ms
+[debug]   Load.apply: finalTransforms took 86.085075ms
+[debug]   Load.apply: config.delegates took 11.529815ms
+[debug]   Load.apply: Def.make(settings)... took 710.541224ms
+[debug]   Load.apply: structureIndex took 143.819339ms
+[debug]   Load.apply: mkStreams took 3.420663ms
+[info] loading global plugins from /Users/pournasengupta/.sbt/1.0/plugins
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug] Load.defaultLoad until apply took 4542.932495ms
+[debug]           Load.loadUnit: plugins took 29.729684ms
+[debug]           Load.loadUnit: defsScala took 0.005482ms
+[debug] [Loading] Scanning directory /Users/pournasengupta/Dropbox/csci3155/project2/project
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/pournasengupta/Dropbox/csci3155/project2/project, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 2.573825 ms
+[debug]               Load.resolveProject(project2-build) took 1.541523ms
+[debug]             Load.loadTransitive: finalizeProject(Project(id project2-build, base: /Users/pournasengupta/Dropbox/csci3155/project2/project, plugins: List(<none>))) took 4.819014ms
+[debug] [Loading] Done in /Users/pournasengupta/Dropbox/csci3155/project2/project, returning: (project2-build)
+[debug]           Load.loadUnit: loadedProjectsRaw took 7.484708ms
+[debug]           Load.loadUnit: cleanEvalClasses took 0.011373ms
+[debug]         Load.loadUnit(file:/Users/pournasengupta/Dropbox/csci3155/project2/project/, ...) took 39.566902ms
+[debug]       Load.apply: load took 41.400169ms
+[debug]       Load.apply: resolveProjects took 0.125832ms
+[debug]       Load.apply: finalTransforms took 20.805354ms
+[debug]       Load.apply: config.delegates took 0.498605ms
+[debug]       Load.apply: Def.make(settings)... took 287.373095ms
+[debug]       Load.apply: structureIndex took 137.102955ms
+[debug]       Load.apply: mkStreams took 0.004158ms
+[info] loading project definition from /Users/pournasengupta/Dropbox/csci3155/project2/project
+[debug] Running task... Cancel: Signal, check cycles: false, forcegc: true
+[debug]     Load.loadUnit: plugins took 906.763445ms
+[debug]     Load.loadUnit: defsScala took 0.004796ms
+[debug] [Loading] Scanning directory /Users/pournasengupta/Dropbox/csci3155/project2
+[debug]       Load.loadUnit: mkEval took 17.709561ms
+[debug] [Loading] Found non-root projects 
+[debug] [Loading] Done in /Users/pournasengupta/Dropbox/csci3155/project2, returning: ()
+[debug] deducing auto plugins based on known facts Set(Atom(sbt.plugins.CorePlugin)) and clauses Clauses(List(Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.ScriptedPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.SbtPlugin),Set(Atom(sbt.ScriptedPlugin))), Clause(Atom(sbt.plugins.SemanticdbPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JUnitXmlReportPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.MiniDependencyTreePlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.IvyPlugin))), Clause(Atom(sbt.plugins.IvyPlugin),Set(Atom(sbt.plugins.JvmPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.SemanticdbPlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.JUnitXmlReportPlugin))), Clause(Atom(sbt.plugins.CorePlugin),Set(Atom(sbt.plugins.Giter8TemplatePlugin))), Clause(Atom(sbt.plugins.JvmPlugin),Set(Atom(sbt.plugins.MiniDependencyTreePlugin)))))
+[debug]   :: deduced result: Matched(sbt.plugins.CorePlugin,sbt.plugins.Giter8TemplatePlugin,sbt.plugins.IvyPlugin,sbt.plugins.JvmPlugin,sbt.plugins.MiniDependencyTreePlugin,sbt.plugins.JUnitXmlReportPlugin,sbt.plugins.SemanticdbPlugin)
+[debug] Plugins.deducer#function took 4.761611 ms
+[info] loading settings for project project2 from build.sbt ...
+[debug]         Load.resolveProject(project2) took 4.821279ms
+[debug]       Load.loadTransitive: finalizeProject(Project(id project2, base: /Users/pournasengupta/Dropbox/csci3155/project2, plugins: List(<none>))) took 10.447267ms
+[debug] [Loading] Done in /Users/pournasengupta/Dropbox/csci3155/project2, returning: (project2)
+[debug]     Load.loadUnit: loadedProjectsRaw took 781.400219ms
+[debug]     Load.loadUnit: cleanEvalClasses took 11.327343ms
+[debug]   Load.loadUnit(file:/Users/pournasengupta/Dropbox/csci3155/project2/, ...) took 1700.531861ms
+[debug] Load.apply: load took 1702.217934ms
+[debug] Load.apply: resolveProjects took 0.166185ms
+[debug] Load.apply: finalTransforms took 13.671675ms
+[debug] Load.apply: config.delegates took 0.500128ms
+[debug] Load.apply: Def.make(settings)... took 131.443169ms
+[debug] Load.apply: structureIndex took 54.415284ms
+[debug] Load.apply: mkStreams took 0.003462ms
+[info] set current project to csci3155_spring2021_project2 (in build file:/Users/pournasengupta/Dropbox/csci3155/project2/)
+[debug] > Exec(sbtPopOnFailure, None, None)
+[debug] > Exec(resumeFromFailure, None, None)
+[debug] > Exec(notifyUsersAboutShell, None, None)
+[debug] > Exec(iflast shell, None, None)
+[debug] > Exec(shell, None, None)
+[info] sbt server started at local:///Users/pournasengupta/.sbt/1.0/server/9286f9717e4563a74cf8/sock
+[info] started sbt server
