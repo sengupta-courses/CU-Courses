@@ -1,0 +1,118 @@
+<html>
+<head>
+<title>lorenzpy.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+.s4 { color: #6a8759;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+lorenzpy.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># lorenzpy.py</span>
+<span class="s0"># Created by Pourna Sengupta</span>
+<span class="s0"># June 6, 2021</span>
+
+<span class="s0"># Lorenz Attractor Visualization</span>
+<span class="s0"># CSCI 4229 - Computer Graphics</span>
+<span class="s0"># Willem Schreuder</span>
+
+
+<span class="s2">from </span><span class="s1">OpenGL.GL </span><span class="s2">import </span><span class="s1">*</span>
+<span class="s2">from </span><span class="s1">OpenGL.GLU </span><span class="s2">import </span><span class="s1">*</span>
+<span class="s2">from </span><span class="s1">OpenGL.GLUT </span><span class="s2">import </span><span class="s1">*</span>
+<span class="s2">import </span><span class="s1">sys</span>
+
+<span class="s2">global </span><span class="s1">width</span>
+<span class="s2">global </span><span class="s1">height</span>
+
+<span class="s1">sigma = </span><span class="s3">10.00</span>
+<span class="s1">beta = </span><span class="s3">2.6666</span>
+<span class="s1">rho = </span><span class="s3">28</span>
+
+
+<span class="s2">def </span><span class="s1">init():</span>
+    <span class="s1">glClearColor(</span><span class="s3">1.0</span><span class="s2">, </span><span class="s3">1.0</span><span class="s2">, </span><span class="s3">1.0</span><span class="s2">, </span><span class="s3">0.0</span><span class="s1">)</span>
+    <span class="s1">glMatrixMode(GL_PROJECTION)</span>
+    <span class="s1">glLoadIdentity()</span>
+    <span class="s1">gluOrtho2D(-</span><span class="s3">50.0</span><span class="s2">, </span><span class="s3">50.0</span><span class="s2">, </span><span class="s1">-</span><span class="s3">50.0</span><span class="s2">, </span><span class="s3">50.0</span><span class="s1">)</span>
+    <span class="s1">glMatrixMode(GL_MODELVIEW)</span>
+    <span class="s1">glLoadIdentity()</span>
+
+
+<span class="s2">def </span><span class="s1">lorenzattr(curr):</span>
+    <span class="s1">ax</span><span class="s2">, </span><span class="s1">ay</span><span class="s2">, </span><span class="s1">az = curr</span>
+    <span class="s1">l1 = sigma * (ay - ax)</span>
+    <span class="s1">l2 = ax * (rho - az) - ay</span>
+    <span class="s1">l3 = (ax * ay) - (beta * az)</span>
+    <span class="s2">return </span><span class="s1">[l1</span><span class="s2">, </span><span class="s1">l2</span><span class="s2">, </span><span class="s1">l3]</span>
+
+
+<span class="s2">def </span><span class="s1">lorenzplot():</span>
+    <span class="s1">glClear(GL_COLOR_BUFFER_BIT)</span>
+    <span class="s1">glPointSize(</span><span class="s3">2.0</span><span class="s1">)</span>
+    <span class="s1">glLineWidth(</span><span class="s3">1.25</span><span class="s1">)</span>
+
+    <span class="s0"># Current Environment</span>
+    <span class="s1">ax</span><span class="s2">, </span><span class="s1">ay</span><span class="s2">, </span><span class="s1">az = </span><span class="s3">1.00000</span><span class="s2">, </span><span class="s3">1.00000</span><span class="s2">, </span><span class="s3">1.00000</span>
+    <span class="s1">dt = </span><span class="s3">0.001</span>
+    <span class="s0"># Apply Lorenz Attraction to Current Environment</span>
+    <span class="s1">current = ax</span><span class="s2">, </span><span class="s1">ay</span><span class="s2">, </span><span class="s1">az</span>
+    <span class="s1">l1</span><span class="s2">, </span><span class="s1">l2</span><span class="s2">, </span><span class="s1">l3 = lorenzattr(current)</span>
+
+    <span class="s0"># Explicit Euler Integration</span>
+    <span class="s0"># Integrate 50,000 steps</span>
+    <span class="s0"># 50 time units, where dt = 0.001</span>
+
+    <span class="s0"># AX VS AY</span>
+
+    <span class="s0"># Integration Variables</span>
+    <span class="s1">a1</span><span class="s2">, </span><span class="s1">a2</span><span class="s2">, </span><span class="s1">a3 = l1</span><span class="s2">, </span><span class="s1">l2</span><span class="s2">, </span><span class="s1">l3</span>
+    <span class="s2">for </span><span class="s1">n </span><span class="s2">in </span><span class="s1">range(-</span><span class="s3">50000</span><span class="s2">, </span><span class="s3">50000</span><span class="s2">, </span><span class="s3">1</span><span class="s1">):</span>
+        <span class="s1">a1 += ((l1 * -sigma) + (sigma * l2)) * dt</span>
+        <span class="s1">a2 += ((rho * l1) - l2 - (l1 * l3)) * dt</span>
+        <span class="s1">a3 += ((beta * l3) + (l1 * l3)) * dt</span>
+
+        <span class="s0"># AX</span>
+        <span class="s1">glBegin(GL_LINE_STRIP)</span>
+        <span class="s1">glColor3f(</span><span class="s3">1.0</span><span class="s2">, </span><span class="s3">0.0</span><span class="s2">, </span><span class="s3">0.0</span><span class="s1">)</span>
+        <span class="s1">glVertex2f(n</span><span class="s2">, </span><span class="s1">a1)</span>
+        <span class="s1">glEnd()</span>
+
+        <span class="s0"># AY</span>
+        <span class="s1">glBegin(GL_LINE_STRIP)</span>
+        <span class="s1">glColor3f(</span><span class="s3">0.0</span><span class="s2">, </span><span class="s3">1.0</span><span class="s2">, </span><span class="s3">0.0</span><span class="s1">)</span>
+        <span class="s1">glVertex2f(n</span><span class="s2">, </span><span class="s1">a2)</span>
+        <span class="s1">glEnd()</span>
+        
+        <span class="s0"># AZ</span>
+        <span class="s1">glBegin(GL_LINE_STRIP)</span>
+        <span class="s1">glColor3f(</span><span class="s3">0.0</span><span class="s2">, </span><span class="s3">0.0</span><span class="s2">, </span><span class="s3">1.0</span><span class="s1">)</span>
+        <span class="s1">glVertex2f(n</span><span class="s2">, </span><span class="s1">a3)</span>
+        <span class="s1">glEnd()</span>
+        <span class="s1">glFlush()</span>
+
+
+<span class="s2">def </span><span class="s1">main():</span>
+    <span class="s1">glutInit(sys.argv)</span>
+    <span class="s1">glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE)</span>
+    <span class="s1">glutInitWindowPosition(</span><span class="s3">100</span><span class="s2">, </span><span class="s3">100</span><span class="s1">)</span>
+    <span class="s1">glutInitWindowSize(</span><span class="s3">500</span><span class="s2">, </span><span class="s3">500</span><span class="s1">)</span>
+    <span class="s1">glutCreateWindow(</span><span class="s4">&quot;Lorenz Attractor&quot;</span><span class="s1">)</span>
+    <span class="s1">glutDisplayFunc(lorenzplot)</span>
+
+    <span class="s1">init()</span>
+    <span class="s1">glutMainLoop()</span>
+
+
+<span class="s1">main()</span>
+</pre>
+</body>
+</html>

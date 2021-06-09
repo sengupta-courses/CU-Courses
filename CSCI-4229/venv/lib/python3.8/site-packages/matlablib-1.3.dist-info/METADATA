@@ -1,0 +1,49 @@
+Metadata-Version: 2.1
+Name: matlablib
+Version: 1.3
+Summary: Matlab-tool suite
+Home-page: https://github.com/OSHI7/matlablib
+Author: Josh Philipson
+Author-email: philipson@gmail.com
+License: MIT
+Platform: UNKNOWN
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Description-Content-Type: text/markdown
+Requires-Dist: pandas
+Requires-Dist: matplotlib
+Requires-Dist: ipython
+
+# matlablib
+Suite of Matlab utilities ported over to Python 
+
+## Installation
+Run the following to install :
+
+```python
+pip install matlablib
+```
+
+
+## Usage
+``` python
+import matlablib as ml  
+from matlablib import closefigures  
+from matlablib import cc  
+from matlablib import keyboard  
+from matlablib import sayHey  
+from matlablib import quit_early  
+from matlablib import kill_background  
+from matlablib import getPythonVariables  
+```
+
+### Say hey
+``` python
+ml.sayHey
+```
+
+
