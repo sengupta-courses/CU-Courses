@@ -1,41 +1,106 @@
 # la_v3.py
 # Lorenz Attractor Visualization
-# Inspiration from raymas (Github)
 # Created by Pourna Sengupta
 
-import numpy as np
-import matplotlib as mpl
-from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
-import matplotlib.animation as animation
+# Imports for OpenGL and OpenGLU
+import OpenGL.GL as gl
+import OpenGL.GLU as glu
 
-from OpenGL.GL import *
-from OpenGL.GLUT import *
+# Imports to Simulate Lorenz Attractor
+import pygame
+from pygame.locals import *
 
-import time
-import sys
-import threading
+# Locally Accessible Variables
+# Simulation Constants
+x = 0.01
+y = 0
+z = 0
+count = 0
 
-# Lorenz Attractor Constants
-sigma = 10
-beta = 2.6666
-rho = 28
-
-# Time-step Constant
-dt = 0.001
-path = []
+display = (1250, 950)
+angle = 0.01
 
 
-def calculate(x, y, z):
-    global sigma
-    global beta
-    global rho
-    global dt
+def calculate_lorenz(x, y, z, count):
+    # Set Lorenz Parameters
+    # Time Step
+    dt = 0.01
+    # Sigma
+    s = 10.0
+    # Rho
+    r = 28
+    # Beta
+    b = (8/3)
+    dx, dy, dz = 0, 0, 0
 
-    newX = x + dt * sigma * (y - x)
-    newY = y + dt * (x * (rho - z) - y)
-    newZ = z + dt * (x * y - beta * z)
+    # Simulate 50,000 Steps
+    while count != 10000:
+        # Set Color
+        gl.glColor3d(1, 1, 1)
 
-    return (newX, newY, newZ)
+        # Lorenz Attractor Differential Equations
+        dx = (s * (y - x)) * dt
+        dy = (x * (r - z) - y) * dt
+        dz = (x * y - b * z) * dt
+
+        # Plot x, y, z as it is simulated
+        x += dx
+        y += dy
+        z += dz
+        count += 1
+        gl.glColor3d(1, 1, 1)
+        gl.glVertex3d(z, y, z, count)
+
+# Calculation Function: Takes in x, y, z, and count (current state)
+# Calculates lorenz attractor differentials
 
 
+def plot(angle):
+    # Initialize instance of pygame
+    pygame.init()
+
+    # Set display for OpenGL
+    pygame.display.set_mode(display, DOUBLEBUF|OPENGL)
+    glu.gluPerspective(45, (display[0]/display[1]), 0.1, 1500)
+
+    gl.glVertex3d(0, 0, -1)
+    gl.glRotatef(0, 0, 0, 0)
+
+    clock = pygame.time.Clock()
+    while True:
+        # Quit instance of Pygame
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                quit()
+
+        clock.tick()
+
+        gl.glClear(gl.GL_COLOR_BUFFER_BIT|gl.GL_DEPTH_BUFFER_BIT)
+
+        # Zoom out and translate the points after rotation
+        if angle < 1:
+            gl.glRotatef(angle, -0.5, -angle, -5)
+            gl.glTranslatef(0, 0, -0.5)
+        # Zoom in and translate the points after rotation
+        if angle > 1:
+            gl.glRotatef(0.9, 5, 1, -1)
+            gl.glTranslatef(0, 0, 0.01)
+
+        # Set Plotting Guidelines
+        gl.glEnable(gl.GL_POINT_SMOOTH)
+        gl.glPointSize(1)
+
+        # Begin Plotting
+        gl.glBegin(gl.GL_POINTS)
+        calculate_lorenz(x, y, z, count)
+        gl.glEnd()
+
+        # Adjust Display
+        pygame.display.flip()
+        angle += 0.005
+# Plot Function: Set up pygame instance & display, plot using OpenGL
+
+
+plot(angle)
+# Main Function: Call to Plot Function, pass angle as parameter
